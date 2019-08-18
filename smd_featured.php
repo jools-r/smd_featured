@@ -167,9 +167,14 @@ function smd_featured_get_style_rules()
 .smd_featured a { font-weight: bold; color:#80551e; }
 #smd_featured_cpanel form { border:1px solid #ccc; margin: 0.5rem 0; padding: 1rem; }
 .smd_featured_subpanel h4 { margin: 0 0 0.5rem }
-.smd_featured_table { margin:0 auto; text-align:center; }
 .smd_clear { clear:both; }
-.smd_featured_table div { display:inline-block; width:{bw}px; height:{bh}px; border:1px solid #aaa; padding:0.4em; overflow:hidden; }
+.smd_featured_table { margin:0 auto; text-align:center; }
+.smd_featured_table div { display:inline-block; vertical-align: top; width:{bw}px; height:{bh}px; border:1px solid #aaa; padding:0.4em; margin: 0 10px 10px 0; overflow:hidden; }
+@supports (display: grid) {
+.smd_featured_table { display: grid; grid-template-columns: repeat(auto-fill, minmax({bw}px,1fr)); grid-gap: 10px;}
+.smd_featured_table > h3 { grid-column: 1 / -1; }
+.smd_featured_table div { width: auto; margin: 0; }
+}
 .smd_feat_edart { position:absolute; right:5px; bottom:3px; }
 .smd_feat_edpos { position:absolute; left:2px; bottom:2px; font-size:75%; width:7em;}
 #smd_feat_saveform { margin:1em; }
